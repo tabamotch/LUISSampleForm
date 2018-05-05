@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
-
-using Microsoft.Cognitive.LUIS;
 
 namespace LUISSampleForm
 {
@@ -30,11 +22,10 @@ namespace LUISSampleForm
                 button1.Text = "処理中・・・";
                 button1.Enabled = false;
 
-
                 string appId = textBox1.Text;
                 string appKey = textBox2.Text;
 
-                HttpClient client = new HttpClient();
+                var client = new HttpClient();
                 var query = HttpUtility.ParseQueryString(string.Empty);
 
                 client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", appKey);
